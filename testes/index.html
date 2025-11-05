@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flash Card</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      width: 300px;
+      height: 200px;
+      perspective: 1000px;
+      cursor: pointer;
+    }
+
+    .inner-card {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .card:hover .inner-card {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      backface-visibility: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      color: white;
+      font-size: 1.3em;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .front {
+      background: #4CAF50;
+    }
+
+    .back {
+      background: #FF9800;
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="inner-card">
+      <div class="front">
+        O que é a Lei de Ohm?
+      </div>
+      <div class="back">
+        É a relação entre tensão, corrente e resistência: V = R × I.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
